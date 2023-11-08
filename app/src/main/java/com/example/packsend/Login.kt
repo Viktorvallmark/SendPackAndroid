@@ -1,5 +1,6 @@
 package com.example.packsend
 
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,6 +35,12 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.ui.platform.LocalContext
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,6 +69,7 @@ fun LoginPage(navController: NavHostController) {
         val username = remember { mutableStateOf(TextFieldValue()) }
         val password = remember { mutableStateOf(TextFieldValue()) }
 
+
         Text(text = "SendPack", style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive, color = MaterialTheme.colorScheme.secondary))
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -81,7 +89,7 @@ fun LoginPage(navController: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
-                onClick = { },
+                onClick = {},
                 shape = RoundedCornerShape(50.dp),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -90,6 +98,7 @@ fun LoginPage(navController: NavHostController) {
                 Text(text = "Login")
             }
         }
+       // Text(text = )
 
         Spacer(modifier = Modifier.height(20.dp))
         ClickableText(
